@@ -1,18 +1,12 @@
-from pprint import pprint
 import random
 import requests
-
 import urllib.parse
+from pprint import pprint
+
+import onetouch_urls
+import onetouch_app
 
 SESSION = random.randint(10000, 99999)
-TIMEOUT = 30
-AUTH_TIMEOUT = 900
-
-USR_BASE_URL = 'https://demo.epay.bg/xdev/api/user/'
-
-DEVICEID = '1510691760'
-TOKEN = '78935936003423892015399874824155'
-APPID = '6609898197243081281733444125044765054179316360618564706359682755'
 
 
 def send_recv_req(url, params):
@@ -28,11 +22,11 @@ def send_recv_req(url, params):
 
 def general_user_info():
     params = {
-        'APPID': APPID,
-        'DEVICEID': DEVICEID,
-        'TOKEN': TOKEN,
+        'APPID': onetouch_app.APPID,
+        'DEVICEID': onetouch_app.DEVICEID,
+        'TOKEN': onetouch_app.TOKEN,
     }
-    url = USR_BASE_URL + 'info?'
+    url = onetouch_urls.USR_INF_GEN
     user_info = send_recv_req(url, params)
 
     print('\n### General user info ###')
@@ -43,14 +37,13 @@ general_user_info()
 
 
 def get_user_pay_instrum_balance(pins):
-    print(pins)
     params = {
-        'APPID': APPID,
-        'DEVICEID': DEVICEID,
-        'TOKEN': TOKEN,
+        'APPID': onetouch_app.APPID,
+        'DEVICEID': onetouch_app.DEVICEID,
+        'TOKEN': onetouch_app.TOKEN,
         'PINS': pins,
     }
-    url = USR_BASE_URL + 'info/pins/balance?'
+    url = onetouch_urls.USR_INF_BALANCE
     user_info_pins_balance = send_recv_req(url, params)
 
     print('\n### User payment instruments balance ###')
@@ -59,11 +52,11 @@ def get_user_pay_instrum_balance(pins):
 
 def get_user_pay_instrum():
     params = {
-        'APPID': APPID,
-        'DEVICEID': DEVICEID,
-        'TOKEN': TOKEN,
+        'APPID': onetouch_app.APPID,
+        'DEVICEID': onetouch_app.DEVICEID,
+        'TOKEN': onetouch_app.TOKEN,
     }
-    url = USR_BASE_URL + 'info/pins?'
+    url = onetouch_urls.USR_INF_PINS
     user_info_pins = send_recv_req(url, params)
 
     print('\n### User payment instruments info ###')
