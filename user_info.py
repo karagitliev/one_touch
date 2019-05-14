@@ -3,8 +3,9 @@ import requests
 import urllib.parse
 from pprint import pprint
 
-import onetouch_urls
-import onetouch_app
+import onetouch_app as app
+import onetouch_log as _log
+import onetouch_urls as urls
 
 SESSION = random.randint(10000, 99999)
 
@@ -22,11 +23,11 @@ def send_recv_req(url, params):
 
 def general_user_info():
     params = {
-        'APPID': onetouch_app.APPID,
-        'DEVICEID': onetouch_app.DEVICEID,
-        'TOKEN': onetouch_app.TOKEN,
+        'APPID': app.APPID,
+        'DEVICEID': app.DEVICEID,
+        'TOKEN': app.TOKEN,
     }
-    url = onetouch_urls.USR_INF_GEN
+    url = urls.USR_INF_GEN
     user_info = send_recv_req(url, params)
 
     print('\n### General user info ###')
@@ -38,12 +39,12 @@ general_user_info()
 
 def get_user_pay_instrum_balance(pins):
     params = {
-        'APPID': onetouch_app.APPID,
-        'DEVICEID': onetouch_app.DEVICEID,
-        'TOKEN': onetouch_app.TOKEN,
+        'APPID': app.APPID,
+        'DEVICEID': app.DEVICEID,
+        'TOKEN': app.TOKEN,
         'PINS': pins,
     }
-    url = onetouch_urls.USR_INF_BALANCE
+    url = urls.USR_INF_BALANCE
     user_info_pins_balance = send_recv_req(url, params)
 
     print('\n### User payment instruments balance ###')
@@ -52,11 +53,11 @@ def get_user_pay_instrum_balance(pins):
 
 def get_user_pay_instrum():
     params = {
-        'APPID': onetouch_app.APPID,
-        'DEVICEID': onetouch_app.DEVICEID,
-        'TOKEN': onetouch_app.TOKEN,
+        'APPID': app.APPID,
+        'DEVICEID': app.DEVICEID,
+        'TOKEN': app.TOKEN,
     }
-    url = onetouch_urls.USR_INF_PINS
+    url = urls.USR_INF_PINS
     user_info_pins = send_recv_req(url, params)
 
     print('\n### User payment instruments info ###')
