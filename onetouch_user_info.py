@@ -1,24 +1,12 @@
 import random
-import requests
-import urllib.parse
 from pprint import pprint
 
 import onetouch_app as app
-import onetouch_log as _log
+import onetouch_log as log
 import onetouch_urls as urls
+import onetouch_send_recv as req
 
 SESSION = random.randint(10000, 99999)
-
-
-def send_recv_req(url, params):
-    query_string = urllib.parse.urlencode(params)
-    r = requests.get(url + query_string)
-    print(url + query_string)
-    r.json()
-
-    # shoul check if there is answer here, or answer is correct
-
-    return(r.json())
 
 
 def general_user_info():
@@ -28,7 +16,8 @@ def general_user_info():
         'TOKEN': app.TOKEN,
     }
     url = urls.USR_INF_GEN
-    user_info = send_recv_req(url, params)
+    req_type = 'usr_inf_gen'
+    user_info = req.send_recv(url, params, req_type)
 
     print('\n### General user info ###')
     pprint(user_info['userinfo'])
@@ -37,7 +26,7 @@ def general_user_info():
 general_user_info()
 
 
-def get_user_pay_instrum_balance(pins):
+def pay_instruments_balance(pins):
     params = {
         'APPID': app.APPID,
         'DEVICEID': app.DEVICEID,
@@ -45,25 +34,28 @@ def get_user_pay_instrum_balance(pins):
         'PINS': pins,
     }
     url = urls.USR_INF_BALANCE
-    user_info_pins_balance = send_recv_req(url, params)
+    req_type = 'usr_inf_balance'
+    pins_balance = req.send_recv(url, params, req_type)
 
     print('\n### User payment instruments balance ###')
-    pprint(user_info_pins_balance)
+    pprint(pins_balance)
 
 
-def get_user_pay_instrum():
+def pay_instruments():
     params = {
         'APPID': app.APPID,
         'DEVICEID': app.DEVICEID,
         'TOKEN': app.TOKEN,
     }
     url = urls.USR_INF_PINS
-    user_info_pins = send_recv_req(url, params)
+    req_type = 'usr_inf_pins'
+    pins = req.send_recv(url, params, req_type)
 
     print('\n### User payment instruments info ###')
-    pprint(user_info_pins)
+    pprint(pins)
 
-    pins_info = get_user_pay_instrum_balance(user_info_pins['payment_instruments'][0]['ID'])
+    pins = pins['payment_instruments'][0]['ID']
+    pins_balance = pay_instruments_balance(pins)
 
 
-get_user_pay_instrum()
+pay_instruments()

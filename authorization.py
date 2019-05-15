@@ -1,32 +1,31 @@
 from pprint import pprint
 import random
-import requests
-import logging
+
+import onetouch_app as app
+import onetouch_log as log
+import onetouch_urls as urls
+import onetouch_send_recv as req
+
 
 SESSION = random.randint(10000, 99999)
-TIMEOUT = 30
-AUTH_TIMEOUT = 900
-
-AUTH_START = 'https://demo.epay.bg/xdev/mobile/api/start?'
-AUTH_VERIFY = 'https://demo.epay.bg/xdev/api/api/code/get?'
-AUTH_GET_TOKEN = 'https://demo.epay.bg/xdev/api/api/token/get?'
-
-APPID = '6609898197243081281733444125044765054179316360618564706359682755'
-USERNAME = 'a_t_xyTgiDz90Z'
-PASSWORD = '8UP5slwW1E'
-
-DEVICEID = '1510691760'
-TOKEN = '78935936003423892015399874824155'
 
 
-def authorization():
+def authorisation():
     key = random.randint(10000000, 99999999)
     deviceid = random.randint(1000000000, 9999999999)
 
-    r = requests.get(f'{AUTH_START}APPID={APPID}&DEVICEID={deviceid}&KEY={key}')
-    r.json()
+    params = {
+        'APPID': app.APPID,
+        'DEVICEID': deviceid,
+        'KEY': key,
+    }
 
-    pprint(r.json())
+    url = urls.AUTH_START
+    req_type = 'auth_start'
+    authorisation = req.send_recv(url, params, req_type)
+
+    print('\n### Authorisation ###')
+    pprint(authorisation)
 
 
-authorization()
+authorisation()
