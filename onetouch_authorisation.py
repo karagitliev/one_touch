@@ -1,3 +1,4 @@
+import os
 import random
 import requests
 import webbrowser
@@ -7,6 +8,7 @@ from time import sleep
 
 import onetouch_urls as urls
 import onetouch_config as config
+import onetouch_db_handler as db
 
 
 SESSION = random.randint(10000, 99999)
@@ -62,4 +64,18 @@ def authorisation():
     print(f'\nGET TOKEN SUCCESS\n{resp}')
 
 
-authorisation()
+def user_authenticate():
+    os.system('clear')
+    username = input('Please enter username: ')
+
+    user_exists = db.check_user(username)
+
+    if user_exists is True:
+        print('Please choose an option from the menu')
+    else:
+        create_new_user = db.create_user(username)
+        if create_new_user is True:
+            authorisation()
+
+
+user_authenticate()
