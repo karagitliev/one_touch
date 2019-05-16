@@ -1,8 +1,7 @@
 import random
 from pprint import pprint
 
-import onetouch_app as app
-import onetouch_log as log
+import onetouch_config as config
 import onetouch_urls as urls
 import onetouch_send_recv as req
 
@@ -11,9 +10,9 @@ SESSION = random.randint(10000, 99999)
 
 def general_user_info():
     params = {
-        'APPID': app.APPID,
-        'DEVICEID': app.DEVICEID,
-        'TOKEN': app.TOKEN,
+        'APPID': config.APPID,
+        'DEVICEID': config.DEVICEID,
+        'TOKEN': config.TOKEN,
     }
     url = urls.USR_INF_GEN
     req_type = 'usr_inf_gen'
@@ -28,9 +27,9 @@ general_user_info()
 
 def pay_instruments_balance(pins):
     params = {
-        'APPID': app.APPID,
-        'DEVICEID': app.DEVICEID,
-        'TOKEN': app.TOKEN,
+        'APPID': config.APPID,
+        'DEVICEID': config.DEVICEID,
+        'TOKEN': config.TOKEN,
         'PINS': pins,
     }
     url = urls.USR_INF_BALANCE
@@ -43,9 +42,9 @@ def pay_instruments_balance(pins):
 
 def pay_instruments():
     params = {
-        'APPID': app.APPID,
-        'DEVICEID': app.DEVICEID,
-        'TOKEN': app.TOKEN,
+        'APPID': config.APPID,
+        'DEVICEID': config.DEVICEID,
+        'TOKEN': config.TOKEN,
     }
     url = urls.USR_INF_PINS
     req_type = 'usr_inf_pins'

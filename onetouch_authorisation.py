@@ -1,7 +1,7 @@
 import random
-import urllib.parse
-import webbrowser
 import requests
+import webbrowser
+import urllib.parse
 from sys import exit
 from time import sleep
 
@@ -33,6 +33,7 @@ def send_recv(url, params, req_type):
                 return(req_json)
             else:
                 sys.exit(f'{req_type} TIMEOUT')
+    # add else in case of http status != 200
 
 
 def authorisation():
@@ -45,7 +46,7 @@ def authorisation():
         'KEY': key,
     }
 
-    # This opens a browser and opens ePay.bg for user authorisation
+    # This opens a browser and loads ePay.bg for user authorisation
     req_string = urllib.parse.urlencode(params)
     webbrowser.open_new(urls.AUTH_START + req_string)
 
