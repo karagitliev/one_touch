@@ -13,3 +13,6 @@ PIN = 'UsYGw8-pTlZU4DJOAYT91_b0iKUWKKHRMYmE1i4Kroo'
 # Registered client user info
 USERNAME = 'a_t_xyTgiDz90Z'
 PASSWORD = '8UP5slwW1E'
+
+# Database files
+USERS = 'database/users.txt'
