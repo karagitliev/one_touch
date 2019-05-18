@@ -6,12 +6,10 @@ import urllib.parse
 from sys import exit
 from time import sleep
 
+import main_menu
 import onetouch_urls as urls
 import onetouch_config as config
 import onetouch_db_handler as db
-
-
-SESSION = random.randint(10000, 99999)
 
 
 def send_recv(url, params, req_type):
@@ -56,26 +54,12 @@ def authorisation():
     req_type = 'GET CODE'
     resp = send_recv(urls.AUTH_VERIFY, params, req_type)
     params['CODE'] = resp['code']
-    print(f'GET CODE SUCCESS\n{resp}')
+#     print(f'GET CODE SUCCESS\n{resp}') #FIXME print this to log and db
 
     # Actual TOKEN receipt
     req_type = 'AUTHORISATION'
     resp = send_recv(urls.AUTH_GET_TOKEN, params, req_type)
-    print(f'\nGET TOKEN SUCCESS\n{resp}')
+#    print(f'\nGET TOKEN SUCCESS\n{resp}') #FIXME print this to log and db
 
-
-def user_authenticate():
-    os.system('clear')
-    username = input('Please enter username: ')
-
-    user_exists = db.check_user(username)
-
-    if user_exists is True:
-        print('Please choose an option from the menu')
-    else:
-        create_new_user = db.create_user(username)
-        if create_new_user is True:
-            authorisation()
-
-
-user_authenticate()
+    print('\nRegistration successful')
+    main_menu.start()

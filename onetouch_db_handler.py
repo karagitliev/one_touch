@@ -8,12 +8,10 @@ def check_user(username):
     with open(cfg.USERS) as json_file:
         data = json.load(json_file)
         if username in data:
-            user_exists = True
-            return(user_exists)
+            return True
         else:
-            new_user = create_user(username)
-
-    return(user_exists)
+            create_user(username)
+            return False
 
 
 def create_user(username):
