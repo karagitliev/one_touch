@@ -6,7 +6,6 @@ import urllib.parse
 from sys import exit
 from time import sleep
 
-import main_menu
 import onetouch_urls as urls
 import onetouch_config as config
 import onetouch_db_handler as db
@@ -62,4 +61,4 @@ def authorisation():
 #    print(f'\nGET TOKEN SUCCESS\n{resp}') #FIXME print this to log and db
 
     print('\nRegistration successful')
-    main_menu.start()
+    # main_menu.start()

@@ -4,7 +4,6 @@ import onetouch_config as cfg
 
 
 def check_user(username):
-    user_exists = False
     with open(cfg.USERS) as json_file:
         data = json.load(json_file)
         if username in data:
