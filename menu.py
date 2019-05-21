@@ -10,13 +10,15 @@ def main_menu():
     header = colored(header, color='green')
     print(header)
 
-    print('                Please select an option')
-    print('                -----------------------')
+    print('               Please select an option')
+    print('               -----------------------')
 
-    print('                1 - Buy dogfood')
-    print('                2 - Renew subscription')
-    print('                3 - Add new payment instrument')
-    print('                4 - View last 5 transactions\n')
+    print('               1 - Buy dogfood')
+    print('               2 - Renew subscription')
+    print('               3 - Add new payment instrument')
+    print('               4 - View last 5 transactions\n')
+
+    usr_choice = input()
 
 
 main_menu()
