@@ -1,6 +1,5 @@
 import os
 import random
-import logging
 import requests
 import webbrowser
 import urllib.parse
@@ -33,7 +32,7 @@ def send_recv(url, params, req_type):
                 return(req_json)
             else:
                 sys.exit(f'{req_type} TIMEOUT')
-    # add else in case of http status != 200
+    # add else in case of http status != 200 #FIXME
 
 
 def authorisation():
