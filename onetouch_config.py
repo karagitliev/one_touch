@@ -16,3 +16,8 @@ PASSWORD = '8UP5slwW1E'
 
 # Database files
 USERS = 'database/users.txt'
+
+# Logs
+G_LOG = 'logs/global.log'
+E_LOG = 'logs/err.log'
+A_LOG = 'logs/auth.log'

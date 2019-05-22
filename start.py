@@ -1,8 +1,13 @@
 import os
+import random
 from pyfiglet import figlet_format
 from termcolor import colored
+
+import onetouch_logger as log
 import onetouch_db_handler as db
 import onetouch_authorisation as auth_start
+
+SESSION = random.randint(10000, 99999)
 
 
 def user_authenticate():
@@ -26,6 +31,7 @@ def user_authenticate():
     else:
         create_new_user = db.create_user(username)
         if create_new_user is True:
+            log.global_log(f'Create new user START: {username}', SESSION)
             auth_start.authorisation()
 
 
