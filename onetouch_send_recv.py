@@ -2,6 +2,7 @@ import requests
 import urllib.parse
 
 
+# all http request should pass from here #FIXME
 def send_recv(url, params, req_type):
     query_string = urllib.parse.urlencode(params)
     req = requests.get(url + query_string)

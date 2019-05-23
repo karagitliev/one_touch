@@ -80,6 +80,6 @@ def authorisation(username, SESSION):
         }
     }
     db.write_user_data(username, user_data)
+    return user_data
 
-    return True
     # check if db record is success #FIXME

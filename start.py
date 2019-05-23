@@ -29,13 +29,13 @@ def user_authenticate():
 
     if user_data:
         log.global_log(f'User login success: {username}', SESSION)
-        menu.main_menu(user_data)
     else:
         log.global_log(f'Create new user START: {username}', SESSION)
-        create_new_user = auth_start.authorisation(username, SESSION)
-
-    if create_new_user is True:
-        db.create_user(username)
+        user_data = auth_start.authorisation(username, SESSION)
+        user_data['USERNAME'] = username
+        if user_data:
+            db.create_user(username)
+    menu.main_menu(user_data)
 
 
 user_authenticate()
