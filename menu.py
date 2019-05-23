@@ -3,14 +3,14 @@ from pyfiglet import figlet_format
 from termcolor import colored
 
 
-def main_menu():
+def main_menu(user_data):
     os.system('clear')
 
     header = figlet_format('MAIN MENU')
     header = colored(header, color='green')
     print(header)
 
-    print('Please select an option')
+    print(f'Please select an option                          Hello, {user_data["USERNAME"]}')
     print('-----------------------')
 
     print('1 - Buy dogfood')

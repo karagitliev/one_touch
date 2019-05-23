@@ -2,6 +2,13 @@ import logging
 import onetouch_config as config
 
 
+if type == 'global':
+    pass
+elif type == 'auth':
+    pass
+elif type == 'err':
+    pass
+
 # FIXME move logger config to a dedicated file
 def global_log(msg, session):
     logging.basicConfig(filename=config.GLOBAL_LOG, filemode='a', level=logging.DEBUG,
@@ -16,6 +23,6 @@ def err_log(msg, session):
 
 
 def auth_log(msg, session):
-    logging.basicConfig(filename=config.AUTH_LOG, filemode='a', level=logging.DEBUG,
+    logging.basicConfig(filename=config.AUTH_LOG, filemode='a', level=logging.INFO,
                         format=f'\n[{session}] %(asctime)s \n%(message)s', datefmt='%d.%m.%Y %H:%M:%S')
-    logging.debug(f'{msg}')
+    logging.info(f'{msg}')

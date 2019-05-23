@@ -7,7 +7,7 @@ def check_user(username):
     with open(cfg.USERS) as json_file:
         data = json.load(json_file)
         if username in data:
-            return True
+            return read_user_data(username)
         else:
             create_user(username)
             return False
@@ -31,7 +31,20 @@ def create_user(username):
     return True
 
 
-def user_data(username, user_data):
+def read_user_data(username):
+    with open(cfg.USER_DATA) as f:
+        data = json.load(f)
+
+    user_data = {
+        'TOKEN': data[username]['TOKEN'],
+        'DEVICEID': data[username]['DEVICEID'],
+        'USERNAME': username,
+    }
+
+    return user_data
+
+
+def write_user_data(username, user_data):
     user_data[username]['AUTH_TIME'] = int(time.time())
 
     with open(cfg.USER_DATA) as f:

@@ -19,7 +19,7 @@ def send_recv(url, params, req_type):
     if req.status_code == requests.codes.ok:
         req_json = req.json()
         if req_json['status'] == 'OK':
-            return(req_json)
+            return req_json
         else:
             failcount = 0
             while req_json['status'] != 'OK':
@@ -30,7 +30,7 @@ def send_recv(url, params, req_type):
                 if failcount > config.AUTH_TIMEOUT:
                     sys.exit(f'{req_type} TIMEOUT')
             if req_json['status'] == 'OK':
-                return(req_json)
+                return req_json
             else:
                 sys.exit(f'{req_type} TIMEOUT')
     # add else in case of http status != 200 #FIXME
@@ -71,5 +71,5 @@ def authorisation(username, SESSION):
         }
     }
     print('REG SUCCESS')
-    db.user_data(username, user_data)
+    db.write_user_data(username, user_data)
     # check if db record is success #FIXME
