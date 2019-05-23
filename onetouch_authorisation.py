@@ -7,6 +7,7 @@ from sys import exit
 from time import sleep
 
 import onetouch_urls as urls
+import onetouch_logger as log
 import onetouch_config as config
 import onetouch_db_handler as db
 
@@ -35,9 +36,9 @@ def send_recv(url, params, req_type):
     # add else in case of http status != 200 #FIXME
 
 
-def authorisation():
+def authorisation(username, SESSION):
     key = random.randint(10000000, 99999999)
-    deviceid = random.randint(1000000000, 9999999999)
+    deviceid = username + '_' + str(random.randint(1000000000, 9999999999))
 
     params = {
         'APPID': config.APPID,
@@ -48,17 +49,27 @@ def authorisation():
     # This opens a browser and loads ePay.bg for user authorisation
     req_string = urllib.parse.urlencode(params)
     webbrowser.open_new(urls.AUTH_START + req_string)
+    log.auth_log(f'USER REDIRECTED TO EPAY: {username}', SESSION)
 
     # Get code
     req_type = 'GET CODE'
     resp = send_recv(urls.AUTH_VERIFY, params, req_type)
     params['CODE'] = resp['code']
-#     print(f'GET CODE SUCCESS\n{resp}') #FIXME print this to log and db
+    log.auth_log(f'GET CODE SUCCESS: {resp}', SESSION)
 
     # Actual TOKEN receipt
     req_type = 'AUTHORISATION'
     resp = send_recv(urls.AUTH_GET_TOKEN, params, req_type)
-#    print(f'\nGET TOKEN SUCCESS\n{resp}') #FIXME print this to log and db
+    log.auth_log(f'GET TOKEN SUCCESS: {resp}', SESSION)
 
-    print('\nRegistration successful')
-    # main_menu.start()
+    user_data = {
+        username: {
+            'DEVICEID': deviceid,
+            'KEY': key,
+            'CODE': params['CODE'],
+            'TOKEN': resp['TOKEN'],
+        }
+    }
+    print('REG SUCCESS')
+    db.user_data(username, user_data)
+    # check if db record is success #FIXME

@@ -1,0 +1,9 @@
+{
+    "ogogogo": {
+        "DEVICEID": "ogogogo_9922632563",
+        "KEY": 76660252,
+        "CODE": "1I4MD0cQojuqHX1u5f5X8o62048Q5R9S72cEFPfeqrYtrPIbP0MNNtHDAiZ8vdShkR8",
+        "TOKEN": "00000000000000000206137999129553",
+        "AUTH_TIME": 1558606803
+    }
+}

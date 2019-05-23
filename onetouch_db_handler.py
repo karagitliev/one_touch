@@ -29,3 +29,16 @@ def create_user(username):
         json.dump(data, outfile, indent=4)
 
     return True
+
+
+def user_data(username, user_data):
+    user_data[username]['AUTH_TIME'] = int(time.time())
+
+    with open(cfg.USER_DATA) as f:
+        data = json.load(f)
+
+    data.update(user_data)
+    with open(cfg.USER_DATA, 'w') as outfile:
+        json.dump(data, outfile, indent=4)
+
+    return True
