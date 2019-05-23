@@ -5,7 +5,6 @@ import urllib.parse
 from sys import exit
 from time import sleep
 
-import onetouch_logger as log
 import onetouch_user_info as usr_inf
 import onetouch_config as cfg
 import onetouch_db_handler as db
@@ -81,4 +80,6 @@ def authorisation(username, SESSION):
         }
     }
     db.write_user_data(username, user_data)
+
+    return True
     # check if db record is success #FIXME
