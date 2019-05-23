@@ -1,14 +1,6 @@
 {
-    "spas": {
-        "active": 1,
-        "reg_time": 1558028102
-    },
     "kagit": {
         "active": 1,
-        "reg_time": 1558618987
-    },
-    "spaskata": {
-        "active": 1,
-        "reg_time": 1558619666
+        "reg_time": 1558634060
     }
 }

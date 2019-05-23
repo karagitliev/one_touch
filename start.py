@@ -25,11 +25,11 @@ def user_authenticate():
         else:
             break
 
-    user_exists = db.check_user(username)
+    user_data = db.check_user(username)
 
-    if user_exists:
+    if user_data:
         log.global_log(f'User login success: {username}', SESSION)
-        menu.main_menu(user_exists)
+        menu.main_menu(user_data)
     else:
         create_new_user = db.create_user(username)
         if create_new_user is True:

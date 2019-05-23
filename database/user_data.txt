@@ -1,16 +1,16 @@
 {
-    "ogogogo": {
-        "DEVICEID": "ogogogo_9922632563",
-        "KEY": 76660252,
-        "CODE": "1I4MD0cQojuqHX1u5f5X8o62048Q5R9S72cEFPfeqrYtrPIbP0MNNtHDAiZ8vdShkR8",
-        "TOKEN": "00000000000000000206137999129553",
-        "AUTH_TIME": 1558606803
-    },
     "kagit": {
-        "DEVICEID": "kagit_6646354725",
-        "KEY": 77015182,
-        "CODE": "CSZSBTO1c595z8o6k2f0j667n6fsmWcEaEur564QhSJv4jF_vAsJPqAAZ7oZrTX24Zc",
-        "TOKEN": "00000000000000000279790234397256",
-        "AUTH_TIME": 1558618881
+        "KEY": 45480293,
+        "CODE": "g9mWs1M5l5t8x6O3x5y8c9d1RCldAIYWmy93QAI4xeknu-TPs3JLFqgMsJWgrTQs7hA",
+        "TOKEN": "00000000000000000167058138928051",
+        "DEVICEID": "kagit_2183146796",
+        "pins": {
+            "cherni dni": {
+                "PIN_ID": "UsYGw8-pTlZU4DJOAYT911AHDcKpbJdGiAaoV5BtBl8",
+                "PIN_TYPE": 1,
+                "EXPIRES": "08/2027"
+            }
+        },
+        "AUTH_TIME": 1558634097
     }
 }

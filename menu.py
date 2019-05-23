@@ -16,7 +16,8 @@ def main_menu(user_data):
     print('1 - Buy dogfood')
     print('2 - Renew subscription')
     print('3 - Add new payment instrument')
-    print('4 - View last 5 transactions\n')
+    print('4 - View last 5 transactions')
+    print('\n5 - Quit\n')
 
     usr_choice = input()
 
