@@ -82,5 +82,19 @@
             }
         },
         "AUTH_TIME": 1558640990
+    },
+    "kgkgkg": {
+        "KEY": 41690178,
+        "CODE": "HOHAcAQUMUCf1P5N5b876p4K511c7i537QWAfULcE5V1wCYNb6ZqiDpX3_KDZy_DwDo",
+        "TOKEN": "00000000000000000297095262820062",
+        "DEVICEID": "kgkgkg_3232669070",
+        "pins": {
+            "kdkdkd": {
+                "PIN_ID": "UsYGw8-pTlZU4DJOAYT917nTMDsQlHVYPa9j3d84eGk",
+                "PIN_TYPE": 1,
+                "EXPIRES": "08/2027"
+            }
+        },
+        "AUTH_TIME": 1558643381
     }
 }

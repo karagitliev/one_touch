@@ -25,17 +25,15 @@ def user_authenticate():
         else:
             break
 
-    user_data = db.check_user(username)
+    user_exists = db.check_user(username)
 
-    if user_data:
+    if user_exists:
         log.global_log(f'User login success: {username}', SESSION)
     else:
         log.global_log(f'Create new user START: {username}', SESSION)
-        user_data = auth_start.authorisation(username, SESSION)
-        user_data['USERNAME'] = username
-        if user_data:
-            db.create_user(username)
-    menu.main_menu(user_data)
+        auth_start.authorisation(username, SESSION)
+
+    menu.main_menu(username)
 
 
 user_authenticate()

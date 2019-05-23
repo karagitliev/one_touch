@@ -47,19 +47,17 @@ def authorisation(username, SESSION):
     # This opens a browser and loads ePay.bg for user authorisation
     req_string = urllib.parse.urlencode(params)
     webbrowser.open_new(cfg.AUTH_START + req_string)
-#    log.auth_log(f'USER REDIRECTED TO EPAY: {username}', SESSION)
 
     # Get code
     req_type = 'GET CODE'
     resp = send_recv(cfg.AUTH_VERIFY, params, req_type)
     params['CODE'] = resp['code']
-#    log.auth_log(f'GET CODE SUCCESS: {resp}', SESSION)
 
     # Actual TOKEN receipt
     req_type = 'AUTHORISATION'
     resp = send_recv(cfg.AUTH_GET_TOKEN, params, req_type)
-#    log.auth_log(f'GET TOKEN SUCCESS: {resp}', SESSION)
 
+    # FIXME check this code
     # Get user payment instruments
     pins = usr_inf.pay_instruments(deviceid, resp['TOKEN'])
     # Should add logic for more than 1 payment instrument #FIXME
@@ -80,6 +78,6 @@ def authorisation(username, SESSION):
         }
     }
     db.write_user_data(username, user_data)
-    return user_data
+    db.create_user(username)
 
     # check if db record is success #FIXME

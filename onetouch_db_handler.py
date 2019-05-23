@@ -7,10 +7,7 @@ def check_user(username):
     with open(cfg.USERS) as json_file:
         data = json.load(json_file)
         if username in data:
-            return read_user_data(username)
-        else:
-            create_user(username)
-            return False
+            return True
 
 
 def create_user(username):
