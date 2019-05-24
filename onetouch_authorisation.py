@@ -5,7 +5,7 @@ import urllib.parse
 from sys import exit
 from time import sleep
 
-import onetouch_user_info as usr_inf
+import onetouch_user_info as usr_info
 import onetouch_config as cfg
 import onetouch_db_handler as db
 
@@ -57,27 +57,36 @@ def authorisation(username, SESSION):
     req_type = 'AUTHORISATION'
     resp = send_recv(cfg.AUTH_GET_TOKEN, params, req_type)
 
-    # FIXME check this code
     # Get user payment instruments
-    pins = usr_inf.pay_instruments(deviceid, resp['TOKEN'])
+    pins = usr_info.pay_instruments(deviceid, resp['TOKEN'])
     # Should add logic for more than 1 payment instrument #FIXME
-
-    user_data = {
+    user_pins = {
         username: {
-            'KEY': key,
-            'CODE': params['CODE'],
-            'TOKEN': resp['TOKEN'],
-            'DEVICEID': deviceid,
             'pins': {
                 pins['NAME']: {
+                    'KEY': key,
+                    'NAME': pins['NAME'],
+                    'CODE': params['CODE'],
+                    'TOKEN': resp['TOKEN'],
                     'PIN_ID': pins['ID'],
-                    'PIN_TYPE': pins['TYPE'],
                     'EXPIRES': pins['EXPIRES'],
+                    'PIN_TYPE': pins['TYPE'],
+                    'DEVICEID': deviceid,
                 }
             }
         }
     }
-    db.write_user_data(username, user_data)
+    db.write_user_data(username, user_pins, cfg.USER_PINS)
     db.create_user(username)
 
     # check if db record is success #FIXME
+
+    get_user_info = usr_info.general_user_info(deviceid, resp['TOKEN'])
+    user_info = {
+        username: {
+            'KIN': resp['user_info']['KIN'],
+            'GSM': resp['user_info']['GSM'],
+            'EMAIL': resp['user_info']['EMAIL'],
+            'REAL_NAME': resp['user_info']['REAL_NAME'],
+        }
+    }

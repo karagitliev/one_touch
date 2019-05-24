@@ -17,6 +17,7 @@ PASSWORD = '8UP5slwW1E'
 # Database files
 USERS = 'database/users.txt'
 USER_DATA = 'database/user_data.txt'
+USER_PINS = 'database/user_pins.txt'
 
 # Logs
 GLOBAL_LOG = 'logs/global.log'

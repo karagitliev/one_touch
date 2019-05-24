@@ -41,14 +41,12 @@ def read_user_data(username):
     return user_data
 
 
-def write_user_data(username, user_data):
-    user_data[username]['AUTH_TIME'] = int(time.time())
-
-    with open(cfg.USER_DATA) as f:
+def write_user_data(username, user_data, file):
+    with open(file) as f:
         data = json.load(f)
 
     data.update(user_data)
-    with open(cfg.USER_DATA, 'w') as outfile:
+    with open(file, 'w') as outfile:
         json.dump(data, outfile, indent=4)
 
     return True

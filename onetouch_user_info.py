@@ -17,11 +17,7 @@ def general_user_info():
     req_type = 'usr_inf_gen'
     user_info = req.send_recv(url, params, req_type)
 
-    print('\n### General user info ###')
-    pprint(user_info['userinfo'])
-
-
-# general_user_info()
+    return user_info
 
 
 def pay_instruments_balance(pins):
