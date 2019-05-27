@@ -1,6 +1,8 @@
+import time
 from pprint import pprint
 import requests
 import onetouch_config as cfg
+import onetouch_db_handler as db
 
 
 def send_recv(url, params):
@@ -10,12 +12,13 @@ def send_recv(url, params):
     return r_json
 
 
-def payment():
+def payment(username, data):
 
+    print(data)
     params = {
         'APPID': cfg.APPID,
-        'DEVICEID': cfg.DEVICEID,
-        'TOKEN': cfg.TOKEN,
+        'DEVICEID': data['DEVICEID'],
+        'TOKEN': data['TOKEN'],
         'TYPE': 'send'
     }
 
@@ -36,7 +39,7 @@ def payment():
             'RCPT_TYPE': 'KIN',
             'DESCRIPTION': 'Test',
             'REASON': 'Testing app',
-            'PINS': cfg.PIN,
+            'PINS': data['PIN_ID'],  # check what should go here
             'SHOW': 'KIN',
         }
     )
@@ -53,13 +56,17 @@ def payment():
     # Check money send status
     params = {
         'APPID': cfg.APPID,
-        'DEVICEID': cfg.DEVICEID,
-        'TOKEN': cfg.TOKEN,
+        'DEVICEID': data['DEVICEID'],
+        'TOKEN': data['TOKEN'],
         'ID': payment_id,
     }
     r_json = send_recv(cfg.PAY_CHECK_STATUS, params)
     print('\n----\nCheck money send status')
     pprint(r_json)
 
-
-payment()
+    # FIXME add if status OK here, then write to database
+    r_json['TRANS_DATE'] = time.time()
+    user_payment = {
+        r_json['payment']['NO']: r_json,
+    }
+    db.write_user_data(username, user_payment, cfg.USERS_PAYMENTS)

@@ -14,7 +14,7 @@ def create_user(username):
     new_user = {
         username: {
             'active': 1,
-            'reg_time': int(time.time()),
+            'reg_time': time.time(),
         }
     }
 
@@ -28,14 +28,15 @@ def create_user(username):
     return True
 
 
-def read_user_data(username):
-    with open(cfg.USER_DATA) as f:
+def read_user_data(username, file):
+    with open(file) as f:
         data = json.load(f)
 
     user_data = {
         'TOKEN': data[username]['TOKEN'],
         'DEVICEID': data[username]['DEVICEID'],
         'USERNAME': username,
+        'PIN_ID': data[username]['pins']['1']['PIN_ID'],
     }
 
     return user_data
@@ -45,7 +46,11 @@ def write_user_data(username, user_data, file):
     with open(file) as f:
         data = json.load(f)
 
-    data.update(user_data)
+    if username in data:
+        data[username].update(user_data)
+    else:
+        data[username] = user_data
+
     with open(file, 'w') as outfile:
         json.dump(data, outfile, indent=4)
 

@@ -63,7 +63,7 @@ def authorisation(username, SESSION):
     user_pins = {
         username: {
             'pins': {
-                pins['NAME']: {
+                '1': {  # FIXME change this name
                     'KEY': key,
                     'NAME': pins['NAME'],
                     'CODE': params['CODE'],
@@ -76,7 +76,7 @@ def authorisation(username, SESSION):
             }
         }
     }
-    db.write_user_data(username, user_pins, cfg.USER_PINS)
+    db.write_user_data(username, user_pins, cfg.USERS_PINS)
     db.create_user(username)
 
     # check if db record is success #FIXME
@@ -84,9 +84,10 @@ def authorisation(username, SESSION):
     get_user_info = usr_info.general_user_info(deviceid, resp['TOKEN'])
     user_info = {
         username: {
-            'KIN': resp['user_info']['KIN'],
-            'GSM': resp['user_info']['GSM'],
-            'EMAIL': resp['user_info']['EMAIL'],
-            'REAL_NAME': resp['user_info']['REAL_NAME'],
+            'KIN': get_user_info['userinfo']['KIN'],
+            'GSM': get_user_info['userinfo']['GSM'],
+            'EMAIL': get_user_info['userinfo']['EMAIL'],
+            'REAL_NAME': get_user_info['userinfo']['REAL_NAME'],
         }
     }
+    db.write_user_data(username, user_info, cfg.USERS_DATA)

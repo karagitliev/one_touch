@@ -7,11 +7,11 @@ import onetouch_send_recv as req
 SESSION = random.randint(10000, 99999)
 
 
-def general_user_info():
+def general_user_info(deviceid, token):
     params = {
         'APPID': cfg.APPID,
-        'DEVICEID': cfg.DEVICEID,
-        'TOKEN': cfg.TOKEN,
+        'DEVICEID': deviceid,
+        'TOKEN': token,
     }
     url = cfg.USR_INF_GEN
     req_type = 'usr_inf_gen'

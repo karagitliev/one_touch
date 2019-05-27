@@ -1,0 +1,8 @@
+{
+    "asdsadas": {
+        "KIN": "1210373166",
+        "GSM": "",
+        "EMAIL": "",
+        "REAL_NAME": "Quick Authorization"
+    }
+}

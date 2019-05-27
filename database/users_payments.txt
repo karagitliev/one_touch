@@ -1,0 +1,98 @@
+{
+    "kagit": {
+        "2000000000041829": {
+            "status": "OK",
+            "payment": {
+                "ID": "UsYGw8-pTlZU4DJOAYT912GY5Hi9PD7sdsuH1kxq_rw",
+                "RCPT_TYPE": "KIN",
+                "SHOW.KIN": "2218906146",
+                "SHOW": "2218906146",
+                "SHOW.EMAIL": "",
+                "NO": "2000000000041829",
+                "SHOW.NAME": "",
+                "REASON": "Testing app",
+                "SHOW.GSM": "",
+                "STATE": 2,
+                "RCPT": "2945322142",
+                "DESCRIPTION": "Test",
+                "AMOUNT": 100,
+                "TAX": 3,
+                "STATE.TEXT": "\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u0432\u0430 \u0441\u0435",
+                "TOTAL": 103,
+                "PINS": "UsYGw8-pTlZU4DJOAYT911AHDcKpbJdGiAaoV5BtBl8"
+            },
+            "TRANS_DATE": 1558951992.576858
+        },
+        "2000000000041830": {
+            "status": "OK",
+            "payment": {
+                "SHOW.EMAIL": "",
+                "SHOW": "2218906146",
+                "NO": "2000000000041830",
+                "SHOW.NAME": "",
+                "ID": "UsYGw8-pTlZU4DJOAYT91wT4KSVfXeyooQfGr8-fHoA",
+                "RCPT_TYPE": "KIN",
+                "SHOW.KIN": "2218906146",
+                "AMOUNT": 100,
+                "TAX": 3,
+                "STATE.TEXT": "\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u0432\u0430 \u0441\u0435",
+                "TOTAL": 103,
+                "PINS": "UsYGw8-pTlZU4DJOAYT911AHDcKpbJdGiAaoV5BtBl8",
+                "REASON": "Testing app",
+                "SHOW.GSM": "",
+                "RCPT": "2945322142",
+                "STATE": 2,
+                "DESCRIPTION": "Test"
+            },
+            "TRANS_DATE": 1558952000.736922
+        }
+    },
+    "bucata": {
+        "2000000000041832": {
+            "payment": {
+                "SHOW.GSM": "",
+                "REASON": "Testing app",
+                "DESCRIPTION": "Test",
+                "STATE": 2,
+                "RCPT": "2945322142",
+                "TAX": 3,
+                "AMOUNT": 100,
+                "STATE.TEXT": "\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u0432\u0430 \u0441\u0435",
+                "TOTAL": 103,
+                "PINS": "UsYGw8-pTlZU4DJOAYT913vVCCflNjZDsz9N56JuB9s",
+                "ID": "UsYGw8-pTlZU4DJOAYT915M3LUaRNHoUqCRFYrj_2Vg",
+                "RCPT_TYPE": "KIN",
+                "SHOW.KIN": "4136393085",
+                "SHOW": "4136393085",
+                "SHOW.EMAIL": "",
+                "NO": "2000000000041832",
+                "SHOW.NAME": ""
+            },
+            "status": "OK",
+            "TRANS_DATE": 1558952163.586549
+        },
+        "2000000000041833": {
+            "status": "OK",
+            "payment": {
+                "SHOW.KIN": "4136393085",
+                "RCPT_TYPE": "KIN",
+                "ID": "UsYGw8-pTlZU4DJOAYT919zqoU4diYNOgKJdnYBBtNQ",
+                "SHOW.NAME": "",
+                "NO": "2000000000041833",
+                "SHOW.EMAIL": "",
+                "SHOW": "4136393085",
+                "DESCRIPTION": "Test",
+                "STATE": 2,
+                "RCPT": "2945322142",
+                "SHOW.GSM": "",
+                "REASON": "Testing app",
+                "PINS": "UsYGw8-pTlZU4DJOAYT913vVCCflNjZDsz9N56JuB9s",
+                "TOTAL": 103,
+                "STATE.TEXT": "\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u0432\u0430 \u0441\u0435",
+                "TAX": 3,
+                "AMOUNT": 100
+            },
+            "TRANS_DATE": 1558952185.088521
+        }
+    }
+}
