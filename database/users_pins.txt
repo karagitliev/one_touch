@@ -54,5 +54,53 @@
                 "DEVICEID": "bucata_9592411738"
             }
         }
+    },
+    "ffff": {
+        "UsYGw8-pTlZU4DJOAYT91_R4kDAFNE9QJuMdBK6jCFo": {
+            "KEY": 64911438,
+            "NAME": "fffff",
+            "CODE": "62pt3bhS105G5w8R9D8O685V7K3LNCOfBG_jbnx9O27WhrpuC14Mb1neqaylndimX3s",
+            "TOKEN": "00000000000000000294094421145974",
+            "PIN_ID": "UsYGw8-pTlZU4DJOAYT91_R4kDAFNE9QJuMdBK6jCFo",
+            "EXPIRES": "08/2027",
+            "PIN_TYPE": 1,
+            "DEVICEID": "ffff_6481846064"
+        }
+    },
+    "kkkk": {
+        "1": {
+            "KEY": 97666259,
+            "NAME": "kkkkk",
+            "CODE": "NAJ0nuNW1p5b5m8g9o8s6v7l5Z0ZgO6h2mqWkHWF0HW-MCgViO8jmeMC6nQbwUpPEc4",
+            "TOKEN": "00000000000000000110312222437192",
+            "PIN_ID": "UsYGw8-pTlZU4DJOAYT9115H9_mzeRJAtXZC5QGeCac",
+            "EXPIRES": "08/2027",
+            "PIN_TYPE": 1,
+            "DEVICEID": "kkkk_9709687542"
+        }
+    },
+    "kk": {
+        "1": {
+            "KEY": 82568236,
+            "NAME": "kkkkk",
+            "CODE": "meli7h1J525E8W9D8V6s8V1P2bsZPi_VO5obKqQcjhWbgAOHBq-nrpv2_xxl9eMwPyQ",
+            "TOKEN": "00000000000000000618318505181401",
+            "PIN_ID": "UsYGw8-pTlZU4DJOAYT91-wWHER3JJQ455F90Fm5R78",
+            "EXPIRES": "08/2027",
+            "PIN_TYPE": 1,
+            "DEVICEID": "kk_1170739399"
+        }
+    },
+    "pppp": {
+        "1": {
+            "KEY": 37190636,
+            "NAME": "karta",
+            "CODE": "pA99ZNxET9VPw41v5Z568N9p8h7H70573dUuyXku22Jacq0GyokG7GifLVtagWt29CA",
+            "TOKEN": "00000000000000000226454645724112",
+            "PIN_ID": "UsYGw8-pTlZU4DJOAYT915EcpaWduWXzBRm2vAgtMhw",
+            "EXPIRES": "08/2027",
+            "PIN_TYPE": 1,
+            "DEVICEID": "pppp_6580328602"
+        }
     }
 }

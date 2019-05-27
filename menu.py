@@ -2,9 +2,9 @@ from sys import exit
 from time import sleep
 
 import onetouch_config as cfg
+import onetouch_header as header
 import onetouch_payment as payment
 import onetouch_db_handler as db
-import onetouch_header as header
 
 
 def main_menu(username):

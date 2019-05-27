@@ -33,10 +33,10 @@ def read_user_data(username, file):
         data = json.load(f)
 
     user_data = {
-        'TOKEN': data[username]['pins']['1']['TOKEN'],
-        'DEVICEID': data[username]['pins']['1']['DEVICEID'],
+        'TOKEN': data[username]['1']['TOKEN'],
+        'DEVICEID': data[username]['1']['DEVICEID'],
         'USERNAME': username,
-        'PIN_ID': data[username]['pins']['1']['PIN_ID'],
+        'PIN_ID': data[username]['1']['PIN_ID'],
     }
 
     return user_data

@@ -1,6 +1,5 @@
 import time
 from pprint import pprint
-import requests
 import onetouch_config as cfg
 import onetouch_db_handler as db
 import onetouch_send_recv as send

@@ -22,5 +22,29 @@
         "GSM": "",
         "EMAIL": "",
         "REAL_NAME": "Quick Authorization"
+    },
+    "ffff": {
+        "KIN": "1636591855",
+        "GSM": "",
+        "EMAIL": "",
+        "REAL_NAME": "Quick Authorization"
+    },
+    "kkkk": {
+        "KIN": "7867192722",
+        "GSM": "",
+        "EMAIL": "",
+        "REAL_NAME": "Quick Authorization"
+    },
+    "kk": {
+        "KIN": "5073475487",
+        "GSM": "",
+        "EMAIL": "",
+        "REAL_NAME": "Quick Authorization"
+    },
+    "pppp": {
+        "KIN": "8417444989",
+        "GSM": "",
+        "EMAIL": "",
+        "REAL_NAME": "Quick Authorization"
     }
 }

@@ -10,10 +10,8 @@ def general_user_info(deviceid, token):
         'DEVICEID': deviceid,
         'TOKEN': token,
     }
-    url = cfg.USR_INF_GEN
-    req_type = 'usr_inf_gen'
-    user_info = send.send_recv(url, params, req_type)
 
+    user_info = send.send_recv(cfg.USR_INF_GEN, params, 'USR INF GEN')
     return user_info
 
 
@@ -24,12 +22,9 @@ def pay_instruments_balance(pins):
         'TOKEN': cfg.TOKEN,
         'PINS': pins,
     }
-    url = cfg.USR_INF_BALANCE
-    req_type = 'usr_inf_balance'
-    pins_balance = send.send_recv(url, params, req_type)
 
-    print('\n### User payment instruments balance ###')
-    pprint(pins_balance)
+    pins_balance = send.send_recv(cfg.USR_INF_BALANCE, params, 'USR PINS BALANCE')
+    return pins_balance
 
 
 def pay_instruments(deviceid, token):
@@ -38,8 +33,6 @@ def pay_instruments(deviceid, token):
         'DEVICEID': deviceid,
         'TOKEN': token,
     }
-    url = cfg.USR_INF_PINS
-    req_type = 'usr_inf_pins'
-    pins = send.send_recv(url, params, req_type)
 
+    pins = send.send_recv(cfg.USR_INF_PINS, params, 'USR INF PINS')
     return pins['payment_instruments'][0]

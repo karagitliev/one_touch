@@ -2,10 +2,10 @@ import random
 import webbrowser
 import urllib.parse
 
-import onetouch_user_info as usr_info
 import onetouch_config as cfg
-import onetouch_db_handler as db
 import onetouch_send_recv as send
+import onetouch_user_info as user_info
+import onetouch_db_handler as db
 
 
 def authorisation(username, SESSION):
@@ -23,39 +23,36 @@ def authorisation(username, SESSION):
     webbrowser.open_new(cfg.AUTH_START + req_string)
 
     # Get code
-    resp = send.send_recv(cfg.AUTH_VERIFY, params, 'GET CODE')
-    params['CODE'] = resp['code']
+    req_code = send.send_recv(cfg.AUTH_VERIFY, params, 'GET CODE')
+    params['CODE'] = req_code['code']
 
     # Actual TOKEN receipt
-    resp = send.send_recv(cfg.AUTH_GET_TOKEN, params, 'AUTHORISATION')
+    req_token = send.send_recv(cfg.AUTH_GET_TOKEN, params, 'AUTHORISATION')
 
     # Get user payment instruments
-    pins = usr_info.pay_instruments(deviceid, resp['TOKEN'])
     # Should add logic for more than 1 payment instrument #FIXME
-    user_pins = {
-        'pins': {
-            '1': {  # FIXME change this name, should be pin_id
-                'KEY': key,
-                'NAME': pins['NAME'],
-                'CODE': params['CODE'],
-                'TOKEN': resp['TOKEN'],
-                'PIN_ID': pins['ID'],
-                'EXPIRES': pins['EXPIRES'],
-                'PIN_TYPE': pins['TYPE'],
-                'DEVICEID': deviceid,
-            }
+    pins = user_info.pay_instruments(deviceid, req_token['TOKEN'])
+    params = {
+        '1': {
+            'KEY': key,
+            'NAME': pins['NAME'],
+            'CODE': params['CODE'],
+            'TOKEN': req_token['TOKEN'],
+            'PIN_ID': pins['ID'],
+            'EXPIRES': pins['EXPIRES'],
+            'PIN_TYPE': pins['TYPE'],
+            'DEVICEID': deviceid,
         }
     }
-    db.write_user_data(username, user_pins, cfg.USERS_PINS)
+    db.write_user_data(username, params, cfg.USERS_PINS)
     db.create_user(username)
-
     # check if db record is success #FIXME
 
-    get_user_info = usr_info.general_user_info(deviceid, resp['TOKEN'])
-    user_info = {
-        'KIN': get_user_info['userinfo']['KIN'],
-        'GSM': get_user_info['userinfo']['GSM'],
-        'EMAIL': get_user_info['userinfo']['EMAIL'],
-        'REAL_NAME': get_user_info['userinfo']['REAL_NAME'],
+    req_user_info = user_info.general_user_info(deviceid, req_token['TOKEN'])
+    params = {
+        'KIN': req_user_info['userinfo']['KIN'],
+        'GSM': req_user_info['userinfo']['GSM'],
+        'EMAIL': req_user_info['userinfo']['EMAIL'],
+        'REAL_NAME': req_user_info['userinfo']['REAL_NAME'],
     }
-    db.write_user_data(username, user_info, cfg.USERS_DATA)
+    db.write_user_data(username, params, cfg.USERS_DATA)
