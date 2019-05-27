@@ -61,18 +61,16 @@ def authorisation(username, SESSION):
     pins = usr_info.pay_instruments(deviceid, resp['TOKEN'])
     # Should add logic for more than 1 payment instrument #FIXME
     user_pins = {
-        username: {
-            'pins': {
-                '1': {  # FIXME change this name
-                    'KEY': key,
-                    'NAME': pins['NAME'],
-                    'CODE': params['CODE'],
-                    'TOKEN': resp['TOKEN'],
-                    'PIN_ID': pins['ID'],
-                    'EXPIRES': pins['EXPIRES'],
-                    'PIN_TYPE': pins['TYPE'],
-                    'DEVICEID': deviceid,
-                }
+        'pins': {
+            '1': {  # FIXME change this name, should be pin_id
+                'KEY': key,
+                'NAME': pins['NAME'],
+                'CODE': params['CODE'],
+                'TOKEN': resp['TOKEN'],
+                'PIN_ID': pins['ID'],
+                'EXPIRES': pins['EXPIRES'],
+                'PIN_TYPE': pins['TYPE'],
+                'DEVICEID': deviceid,
             }
         }
     }
@@ -83,11 +81,9 @@ def authorisation(username, SESSION):
 
     get_user_info = usr_info.general_user_info(deviceid, resp['TOKEN'])
     user_info = {
-        username: {
-            'KIN': get_user_info['userinfo']['KIN'],
-            'GSM': get_user_info['userinfo']['GSM'],
-            'EMAIL': get_user_info['userinfo']['EMAIL'],
-            'REAL_NAME': get_user_info['userinfo']['REAL_NAME'],
-        }
+        'KIN': get_user_info['userinfo']['KIN'],
+        'GSM': get_user_info['userinfo']['GSM'],
+        'EMAIL': get_user_info['userinfo']['EMAIL'],
+        'REAL_NAME': get_user_info['userinfo']['REAL_NAME'],
     }
     db.write_user_data(username, user_info, cfg.USERS_DATA)

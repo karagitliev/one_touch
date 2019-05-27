@@ -1,50 +1,6 @@
 {
     "kagit": {
         "active": 1,
-        "reg_time": 1558634060
-    },
-    "bucata": {
-        "active": 1,
-        "reg_time": 1558637378
-    },
-    "tarator": {
-        "active": 1,
-        "reg_time": 1558640363
-    },
-    "ojojoj": {
-        "active": 1,
-        "reg_time": 1558640778
-    },
-    "dddd": {
-        "active": 1,
-        "reg_time": 1558640850
-    },
-    "asddas": {
-        "active": 1,
-        "reg_time": 1558640990
-    },
-    "kgkgkg": {
-        "active": 1,
-        "reg_time": 1558643381
-    },
-    "gogogog": {
-        "active": 1,
-        "reg_time": 1558894862
-    },
-    ";j;j;j": {
-        "active": 1,
-        "reg_time": 1558894956
-    },
-    "ohoho": {
-        "active": 1,
-        "reg_time": 1558895264
-    },
-    "dds": {
-        "active": 1,
-        "reg_time": 1558895373
-    },
-    "asdsadas": {
-        "active": 1,
-        "reg_time": 1558895784
+        "reg_time": 1558960483.140522
     }
 }

@@ -1,8 +1,8 @@
 {
-    "asdsadas": {
-        "KIN": "1210373166",
-        "GSM": "",
-        "EMAIL": "",
-        "REAL_NAME": "Quick Authorization"
+    "kagit": {
+       "KIN": "5746252309",
+       "GSM": "",
+       "EMAIL": "",
+       "REAL_NAME": "Quick Authorization"
     }
 }
