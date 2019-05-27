@@ -1,5 +1,3 @@
-from pprint import pprint
-
 import onetouch_config as cfg
 import onetouch_send_recv as send
 

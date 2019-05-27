@@ -1,5 +1,5 @@
-import menu
 import random
+import onetouch_menu as menu
 import onetouch_logger as log
 import onetouch_header as header
 import onetouch_db_handler as db

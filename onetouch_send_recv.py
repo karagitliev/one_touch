@@ -1,6 +1,6 @@
+from time import sleep
 import requests
 import urllib.parse
-from time import sleep
 import onetouch_config as cfg
 
 
