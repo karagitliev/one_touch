@@ -16,5 +16,11 @@
         "GSM": "",
         "EMAIL": "",
         "REAL_NAME": "Quick Authorization"
+    },
+    "bucata": {
+        "KIN": "0956619695",
+        "GSM": "",
+        "EMAIL": "",
+        "REAL_NAME": "Quick Authorization"
     }
 }

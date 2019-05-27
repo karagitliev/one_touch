@@ -40,5 +40,19 @@
                 "DEVICEID": "ibrahim_6351499990"
             }
         }
+    },
+    "bucata": {
+        "pins": {
+            "1": {
+                "KEY": 90058855,
+                "NAME": "kartata",
+                "CODE": "2PsFeUgw4De0UW1h595m8c958q2N3o2O71sOTwCfH00eNuauchbWby9nN-VTkvyoRlg",
+                "TOKEN": "00000000000000000185282531236908",
+                "PIN_ID": "UsYGw8-pTlZU4DJOAYT918twXzwgI_U93oYX2jFEpC0",
+                "EXPIRES": "08/2027",
+                "PIN_TYPE": 1,
+                "DEVICEID": "bucata_9592411738"
+            }
+        }
     }
 }

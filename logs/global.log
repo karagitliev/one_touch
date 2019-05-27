@@ -3852,3 +3852,258 @@ Starting new HTTPS connection (1): demo.epay.bg:443
 
 [97043] 27.05.2019 20:03:44 
 https://demo.epay.bg:443 "POST /xdev/api/payment/check HTTP/1.1" 200 346
+
+[46880] 27.05.2019 20:18:03 
+User login success: kagit
+
+[74336] 27.05.2019 20:19:30 
+User login success: kagit
+
+[71104] 27.05.2019 20:27:20 
+User login success: kagit
+
+[71104] 27.05.2019 20:27:33 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[71104] 27.05.2019 20:27:33 
+https://demo.epay.bg:443 "POST /xdev/api/payment/init HTTP/1.1" 200 97
+
+[71104] 27.05.2019 20:27:33 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[71104] 27.05.2019 20:27:33 
+https://demo.epay.bg:443 "POST /xdev/api/payment/check HTTP/1.1" 200 344
+
+[97269] 27.05.2019 20:28:04 
+User login success: kagit
+
+[97269] 27.05.2019 20:28:07 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[97269] 27.05.2019 20:28:07 
+https://demo.epay.bg:443 "POST /xdev/api/payment/init HTTP/1.1" 200 97
+
+[97269] 27.05.2019 20:28:07 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[97269] 27.05.2019 20:28:07 
+https://demo.epay.bg:443 "POST /xdev/api/payment/check HTTP/1.1" 200 343
+
+[87755] 27.05.2019 20:28:25 
+User login success: kagit
+
+[87755] 27.05.2019 20:28:26 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87755] 27.05.2019 20:28:26 
+https://demo.epay.bg:443 "POST /xdev/api/payment/init HTTP/1.1" 200 97
+
+[87755] 27.05.2019 20:28:26 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87755] 27.05.2019 20:28:26 
+https://demo.epay.bg:443 "POST /xdev/api/payment/check HTTP/1.1" 200 347
+
+[56947] 27.05.2019 20:57:41 
+User login success: kagit
+
+[56947] 27.05.2019 20:57:45 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[56947] 27.05.2019 20:57:45 
+https://demo.epay.bg:443 "POST /xdev/api/payment/init HTTP/1.1" 200 97
+
+[56947] 27.05.2019 20:57:45 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[56947] 27.05.2019 20:57:45 
+https://demo.epay.bg:443 "POST /xdev/api/payment/check HTTP/1.1" 200 346
+
+[56947] 27.05.2019 20:57:51 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[56947] 27.05.2019 20:57:51 
+https://demo.epay.bg:443 "POST /xdev/api/payment/check HTTP/1.1" 200 343
+
+[56947] 27.05.2019 20:57:51 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[56947] 27.05.2019 20:57:51 
+https://demo.epay.bg:443 "POST /xdev/api/payment/send/user HTTP/1.1" 200 347
+
+[56947] 27.05.2019 20:57:51 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[56947] 27.05.2019 20:57:51 
+https://demo.epay.bg:443 "POST /xdev/api/payment/send/status HTTP/1.1" 200 315
+
+[98827] 27.05.2019 21:08:08 
+User login success: kagit
+
+[98827] 27.05.2019 21:08:10 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[98827] 27.05.2019 21:08:10 
+https://demo.epay.bg:443 "POST /xdev/api/payment/init HTTP/1.1" 200 97
+
+[98827] 27.05.2019 21:08:10 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[98827] 27.05.2019 21:08:10 
+https://demo.epay.bg:443 "POST /xdev/api/payment/check HTTP/1.1" 200 344
+
+[98827] 27.05.2019 21:08:12 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[98827] 27.05.2019 21:08:12 
+https://demo.epay.bg:443 "POST /xdev/api/payment/check HTTP/1.1" 200 341
+
+[98827] 27.05.2019 21:08:12 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[98827] 27.05.2019 21:08:12 
+https://demo.epay.bg:443 "POST /xdev/api/payment/send/user HTTP/1.1" 200 352
+
+[98827] 27.05.2019 21:08:12 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[98827] 27.05.2019 21:08:13 
+https://demo.epay.bg:443 "POST /xdev/api/payment/send/status HTTP/1.1" 200 313
+
+[87222] 27.05.2019 21:08:24 
+Create new user START: bucata
+
+[87222] 27.05.2019 21:08:25 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:25 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 149
+
+[87222] 27.05.2019 21:08:28 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:28 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 149
+
+[87222] 27.05.2019 21:08:31 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:31 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 148
+
+[87222] 27.05.2019 21:08:34 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:34 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 149
+
+[87222] 27.05.2019 21:08:37 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:37 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 149
+
+[87222] 27.05.2019 21:08:40 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:40 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 149
+
+[87222] 27.05.2019 21:08:43 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:43 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 148
+
+[87222] 27.05.2019 21:08:46 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:46 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 149
+
+[87222] 27.05.2019 21:08:49 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:49 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 148
+
+[87222] 27.05.2019 21:08:52 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:52 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 149
+
+[87222] 27.05.2019 21:08:55 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:55 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 211
+
+[87222] 27.05.2019 21:08:58 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:58 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855 HTTP/1.1" 200 111
+
+[87222] 27.05.2019 21:08:58 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:58 
+https://demo.epay.bg:443 "GET /xdev/api/api/token/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&KEY=90058855&CODE=2PsFeUgw4De0UW1h595m8c958q2N3o2O71sOTwCfH00eNuauchbWby9nN-VTkvyoRlg HTTP/1.1" 200 151
+
+[87222] 27.05.2019 21:08:58 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:58 
+https://demo.epay.bg:443 "GET /xdev/api/user/info/pins?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&TOKEN=00000000000000000185282531236908 HTTP/1.1" 200 259
+
+[87222] 27.05.2019 21:08:58 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[87222] 27.05.2019 21:08:59 
+https://demo.epay.bg:443 "GET /xdev/api/user/info?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=bucata_9592411738&TOKEN=00000000000000000185282531236908 HTTP/1.1" 200 671
+
+[27763] 27.05.2019 21:52:21 
+Create new user START: fjfjfj
+
+[27763] 27.05.2019 21:52:21 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[27763] 27.05.2019 21:52:21 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=fjfjfj_8017002521&KEY=31047259 HTTP/1.1" 200 148
+
+[27763] 27.05.2019 21:52:24 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[27763] 27.05.2019 21:52:24 
+https://demo.epay.bg:443 "GET /xdev/api/api/code/get?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=fjfjfj_8017002521&KEY=31047259 HTTP/1.1" 200 149
+
+[14680] 27.05.2019 21:57:17 
+User login success: kagit
+
+[25645] 27.05.2019 21:59:25 
+User login success: kagit
+
+[25645] 27.05.2019 21:59:28 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[25645] 27.05.2019 21:59:28 
+https://demo.epay.bg:443 "GET /xdev/api/payment/init?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=kagit_5398575975&TOKEN=00000000000000000188387633518045&TYPE=send HTTP/1.1" 200 97
+
+[25645] 27.05.2019 21:59:28 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[25645] 27.05.2019 21:59:28 
+https://demo.epay.bg:443 "GET /xdev/api/payment/check?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=kagit_5398575975&TOKEN=00000000000000000188387633518045&TYPE=send&ID=UsYGw8-pTlZU4DJOAYT912e__M3d9VnPiPrZ1RUKLUY&AMOUNT=12.99&RCPT=2945322142&RCPT_TYPE=KIN&DESCRIPTION=Test&REASON=Testing+app&PINS=UsYGw8-pTlZU4DJOAYT91zP1KlkvoRfzBwrKfjmHlmY&SHOW=KIN HTTP/1.1" 200 340
+
+[25645] 27.05.2019 21:59:30 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[25645] 27.05.2019 21:59:30 
+https://demo.epay.bg:443 "GET /xdev/api/payment/send/user?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=kagit_5398575975&TOKEN=00000000000000000188387633518045&TYPE=send&ID=UsYGw8-pTlZU4DJOAYT912e__M3d9VnPiPrZ1RUKLUY&AMOUNT=12.99&RCPT=2945322142&RCPT_TYPE=KIN&DESCRIPTION=Test&REASON=Testing+app&PINS=UsYGw8-pTlZU4DJOAYT91zP1KlkvoRfzBwrKfjmHlmY&SHOW=KIN HTTP/1.1" 200 349
+
+[25645] 27.05.2019 21:59:30 
+Starting new HTTPS connection (1): demo.epay.bg:443
+
+[25645] 27.05.2019 21:59:30 
+https://demo.epay.bg:443 "GET /xdev/api/payment/send/status?APPID=6609898197243081281733444125044765054179316360618564706359682755&DEVICEID=kagit_5398575975&TOKEN=00000000000000000188387633518045&ID=UsYGw8-pTlZU4DJOAYT912e__M3d9VnPiPrZ1RUKLUY HTTP/1.1" 200 312

@@ -1,10 +1,7 @@
-import os
-import random
-from pyfiglet import figlet_format
-from termcolor import colored
-
 import menu
+import random
 import onetouch_logger as log
+import onetouch_header as header
 import onetouch_db_handler as db
 import onetouch_authorisation as auth_start
 
@@ -12,14 +9,10 @@ SESSION = random.randint(10000, 99999)
 
 
 def user_authenticate():
-    os.system('clear')
-
-    header = figlet_format('LOGIN')
-    header = colored(header, color='green')
-    print(header)
+    header.header('LOGIN')
 
     while True:
-        username = str(input('Please enter username: '))
+        username = input('Please enter username: ')
         if username == '':
             continue
         else:

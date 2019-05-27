@@ -3,13 +3,7 @@ from pprint import pprint
 import requests
 import onetouch_config as cfg
 import onetouch_db_handler as db
-
-
-def send_recv(url, params):
-    r = requests.post(url, data=params)
-
-    r_json = r.json()
-    return r_json
+import onetouch_send_recv as send
 
 
 def get_taxes(username, amount, data):
@@ -20,7 +14,7 @@ def get_taxes(username, amount, data):
         'TYPE': 'send'
     }
 
-    r_json = send_recv(cfg.PAY_GET_ID, params)
+    r_json = send.send_recv(cfg.PAY_GET_ID, params, 'GET ID')
     params.update(
         {
             'ID': r_json['payment']['ID'],
@@ -34,7 +28,7 @@ def get_taxes(username, amount, data):
         }
     )
 
-    r_json = send_recv(cfg.PAY_CHECK_INP, params)
+    r_json = send.send_recv(cfg.PAY_CHECK_INP, params, 'GET TAXES')
 
     tax = r_json['payment']['PAYMENT_INSTRUMENTS'][0]['TAX']
     total = r_json['payment']['PAYMENT_INSTRUMENTS'][0]['TOTAL']
@@ -43,24 +37,24 @@ def get_taxes(username, amount, data):
     return(tax, total, params)
 
 
-def payment(username, params):
-    r_json = send_recv(cfg.PAY_CHECK_INP, params)
-    print('\n----\nCheck user input and taxes')
-    pprint(r_json)
-
-   # Actual money send
-    r_json = send_recv(cfg.PAY_MONEY_SEND, params)
+def payment(username, data):
+    # Actual money send
+    r_json = send.send_recv(cfg.PAY_MONEY_SEND, data, 'MONEYSEND')
     print('\n----\nActual money send')
     pprint(r_json)
 
-   # Check money send status
+    check_status(username, data)
+
+
+def check_status(username, data):
+    # Check money send status
     params = {
         'APPID': cfg.APPID,
-        'DEVICEID': params['DEVICEID'],
-        'TOKEN': params['TOKEN'],
-        'ID': params['ID'],
+        'DEVICEID': data['DEVICEID'],
+        'TOKEN': data['TOKEN'],
+        'ID': data['ID'],
     }
-    r_json = send_recv(cfg.PAY_CHECK_STATUS, params)
+    r_json = send.send_recv(cfg.PAY_CHECK_STATUS, params, 'CHECK STATUS')
     print('\n----\nCheck money send status')
     pprint(r_json)
 

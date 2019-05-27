@@ -1,37 +1,11 @@
 import random
-import requests
 import webbrowser
 import urllib.parse
-from sys import exit
-from time import sleep
 
 import onetouch_user_info as usr_info
 import onetouch_config as cfg
 import onetouch_db_handler as db
-
-
-def send_recv(url, params, req_type):
-    query_string = urllib.parse.urlencode(params)
-    req = requests.get(url + query_string)
-
-    if req.status_code == requests.codes.ok:
-        req_json = req.json()
-        if req_json['status'] == 'OK':
-            return req_json
-        else:
-            failcount = 0
-            while req_json['status'] != 'OK':
-                sleep(3)
-                failcount += 3
-                req = requests.get(url + query_string)
-                req_json = req.json()
-                if failcount > cfg.AUTH_TIMEOUT:
-                    exit(f'{req_type} TIMEOUT')
-            if req_json['status'] == 'OK':
-                return req_json
-            else:
-                exit(f'{req_type} TIMEOUT')
-    # add else in case of http status != 200 #FIXME
+import onetouch_send_recv as send
 
 
 def authorisation(username, SESSION):
@@ -49,11 +23,11 @@ def authorisation(username, SESSION):
     webbrowser.open_new(cfg.AUTH_START + req_string)
 
     # Get code
-    resp = send_recv(cfg.AUTH_VERIFY, params, 'GET CODE')
+    resp = send.send_recv(cfg.AUTH_VERIFY, params, 'GET CODE')
     params['CODE'] = resp['code']
 
     # Actual TOKEN receipt
-    resp = send_recv(cfg.AUTH_GET_TOKEN, params, 'AUTHORISATION')
+    resp = send.send_recv(cfg.AUTH_GET_TOKEN, params, 'AUTHORISATION')
 
     # Get user payment instruments
     pins = usr_info.pay_instruments(deviceid, resp['TOKEN'])
