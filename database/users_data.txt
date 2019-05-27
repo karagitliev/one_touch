@@ -1,8 +1,20 @@
 {
     "kagit": {
-       "KIN": "5746252309",
-       "GSM": "",
-       "EMAIL": "",
-       "REAL_NAME": "Quick Authorization"
+        "KIN": "5746252309",
+        "GSM": "",
+        "EMAIL": "",
+        "REAL_NAME": "Quick Authorization"
+    },
+    "spas": {
+        "KIN": "7850431803",
+        "GSM": "",
+        "EMAIL": "",
+        "REAL_NAME": "Quick Authorization"
+    },
+    "ibrahim": {
+        "KIN": "4554493751",
+        "GSM": "",
+        "EMAIL": "",
+        "REAL_NAME": "Quick Authorization"
     }
 }

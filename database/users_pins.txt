@@ -12,5 +12,33 @@
                 "DEVICEID": "kagit_5398575975"
             }
         }
+    },
+    "spas": {
+        "pins": {
+            "1": {
+                "KEY": 43745161,
+                "NAME": "asd",
+                "CODE": "1hfX1135I5J8d9y6E3G4M0t003o4VPGFaKBp1CV0NC94guqPyFUPC11C4upt0kKy2OI",
+                "TOKEN": "00000000000000000253138509317623",
+                "PIN_ID": "UsYGw8-pTlZU4DJOAYT915E8XyZgZu3HABMS2Mv71vY",
+                "EXPIRES": "08/2027",
+                "PIN_TYPE": 1,
+                "DEVICEID": "spas_1489832355"
+            }
+        }
+    },
+    "ibrahim": {
+        "pins": {
+            "1": {
+                "KEY": 78861954,
+                "NAME": "asd",
+                "CODE": "gBHTQDnJ1y5q548T9W7m7j951o4EmNaIRZUp_r3U1QDKgDBoPTdFS9_y1afb5V9lcsQ",
+                "TOKEN": "00000000000000000110466768721984",
+                "PIN_ID": "UsYGw8-pTlZU4DJOAYT918vRFNWgo4fCeV0d6Oife2A",
+                "EXPIRES": "08/2027",
+                "PIN_TYPE": 1,
+                "DEVICEID": "ibrahim_6351499990"
+            }
+        }
     }
 }

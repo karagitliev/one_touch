@@ -12,9 +12,7 @@ def send_recv(url, params):
     return r_json
 
 
-def payment(username, data):
-
-    print(data)
+def get_taxes(username, amount, data):
     params = {
         'APPID': cfg.APPID,
         'DEVICEID': data['DEVICEID'],
@@ -22,43 +20,45 @@ def payment(username, data):
         'TYPE': 'send'
     }
 
-    # Get payment identificator
     r_json = send_recv(cfg.PAY_GET_ID, params)
-    print('\n----\nGet payment indentificator')
-    pprint(r_json)
-
-    # should add if status OK here
-    payment_id = r_json['payment']['ID']
-
-    # Check params entered by user
     params.update(
         {
-            'ID': payment_id,
-            'AMOUNT': 100,
+            'ID': r_json['payment']['ID'],
+            'AMOUNT': amount,
             'RCPT': cfg.KIN,
             'RCPT_TYPE': 'KIN',
             'DESCRIPTION': 'Test',
             'REASON': 'Testing app',
-            'PINS': data['PIN_ID'],  # check what should go here
+            'PINS': data['PIN_ID'],
             'SHOW': 'KIN',
         }
     )
 
     r_json = send_recv(cfg.PAY_CHECK_INP, params)
+
+    tax = r_json['payment']['PAYMENT_INSTRUMENTS'][0]['TAX']
+    total = r_json['payment']['PAYMENT_INSTRUMENTS'][0]['TOTAL']
+    params['AMOUNT'] = amount
+
+    return(tax, total, params)
+
+
+def payment(username, params):
+    r_json = send_recv(cfg.PAY_CHECK_INP, params)
     print('\n----\nCheck user input and taxes')
     pprint(r_json)
 
-    # Actual money send
+   # Actual money send
     r_json = send_recv(cfg.PAY_MONEY_SEND, params)
     print('\n----\nActual money send')
     pprint(r_json)
 
-    # Check money send status
+   # Check money send status
     params = {
         'APPID': cfg.APPID,
-        'DEVICEID': data['DEVICEID'],
-        'TOKEN': data['TOKEN'],
-        'ID': payment_id,
+        'DEVICEID': params['DEVICEID'],
+        'TOKEN': params['TOKEN'],
+        'ID': params['ID'],
     }
     r_json = send_recv(cfg.PAY_CHECK_STATUS, params)
     print('\n----\nCheck money send status')

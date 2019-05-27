@@ -49,13 +49,11 @@ def authorisation(username, SESSION):
     webbrowser.open_new(cfg.AUTH_START + req_string)
 
     # Get code
-    req_type = 'GET CODE'
-    resp = send_recv(cfg.AUTH_VERIFY, params, req_type)
+    resp = send_recv(cfg.AUTH_VERIFY, params, 'GET CODE')
     params['CODE'] = resp['code']
 
     # Actual TOKEN receipt
-    req_type = 'AUTHORISATION'
-    resp = send_recv(cfg.AUTH_GET_TOKEN, params, req_type)
+    resp = send_recv(cfg.AUTH_GET_TOKEN, params, 'AUTHORISATION')
 
     # Get user payment instruments
     pins = usr_info.pay_instruments(deviceid, resp['TOKEN'])
