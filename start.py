@@ -1,4 +1,4 @@
-import menu
+import onetouch_menu as menu
 import random
 import onetouch_logger as log
 import onetouch_header as header
