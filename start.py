@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import onetouch_menu as menu
->>>>>>> be355eb05358ec329d50c02c31972601fc649777
 import random
 import onetouch_menu as menu
 import onetouch_logger as log
